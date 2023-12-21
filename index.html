@@ -31,7 +31,7 @@ function getUpdates() {
 	// get the data with a webservice call
 	$("#entry_id").css('color', '#f44b4b');
 
-	$.getJSON('https://api.thingspeak.com/channels/1888103/feeds/last', function(data) {
+	$.getJSON('https://api.thingspeak.com/channels/2358825/feeds/last', function(data) {
 
 			// if the field1 has data update the page
 
@@ -114,7 +114,7 @@ function getUpdatess() {
 	// get the data with a webservice call
 	$("#entry_id2").css('color', '#f44b4b');
 
-	$.getJSON('https://api.thingspeak.com/channels/1599196/feeds/last', function(data2) {
+	$.getJSON('https://api.thingspeak.com/channels/2358844/feeds/last', function(data2) {
 
 			// if the field1 has data update the page
 
@@ -308,7 +308,7 @@ function liveTimerUpdtFun() {
   </style>
   
   
- <h1 id="Title" style="text-align:left;">=Welcome OZ=</h1><br>
+ <h1 id="Title" style="text-align:left;">=Environmental Monitoring System=</h1><br>
 <!---  <h1  style="text-align:center;"><a href="https://github.com/OZ-786/oz-home" >EDSU</a></h1> --->
 
   
@@ -317,20 +317,20 @@ function liveTimerUpdtFun() {
 
 	<span id="data">
 	<hr >
-	<h3 align="center"> Live Charts From Meter</h3>
+	<h3 align="center"> Live Charts From THE SYSTEM</h3>
 	<hr >
 
 
-<p><button id="MyButton" onclick="location.href='https://oz-786.github.io/oz-home/temp.html'">Temperature | chart</a></button></p>
-<p><button id="MyButton" onclick="location.href='https://oz-786.github.io/oz-home/power.html'">Power | chart</a></button></p>
-<p><button id="MyButton" onclick="location.href='https://oz-786.github.io/oz-home/Energy.html'">Energy | chart</a></button></p>
-<p><button id="MyButton" onclick="location.href='https://oz-786.github.io/oz-home/volt.html'">Voltage | chart</a></button></p>
-<p><button id="MyButton" onclick="location.href='https://oz-786.github.io/oz-home/Current.html'">Current | chart</a></button></p>
+<p><button id="MyButton" onclick="location.href='https://oz-786.github.io/EMS/temperature.html'">Temperature | chart</a></button></p>
+<p><button id="MyButton" onclick="location.href='https://oz-786.github.io/EMS/humidity.html'">Humidity | chart</a></button></p>
+<p><button id="MyButton" onclick="location.href='https://oz-786.github.io/EMS/water.html'">Water Leakage | chart</a></button></p>
+<p><button id="MyButton" onclick="location.href='https://oz-786.github.io/EMS/smoke.html'">Smoke | chart</a></button></p>
+<p><button id="MyButton" onclick="location.href='https://oz-786.github.io/EMS/voltage.html'">Voltage | chart</a></button></p>
 <p><button id="MyButton" onclick="location.href='https://oz-786.github.io/oz-home/PowerFactor.html'">Power Factor | chart</a></button></p>
 <p><button id="MyButton" onclick="location.href='https://oz-786.github.io/oz-home/frequency.html'">Frequency | chart</a></button></p>
 <p><button id="MyButton" onclick="location.href='https://oz-786.github.io/oz-home/cost.html'">Cost | chart</a></button></p>
 <hr >
-	<div align="left">Home Metrics </div>
+	<div align="left">Environmental Monitoring System </div>
 	<div  align="left">Creator: WALI </div>
 	<div  align="left">* Automatically updates every 10 Seconds </div>
 	<div id="IsDataFresh" align="left"> </div>
@@ -346,37 +346,39 @@ function liveTimerUpdtFun() {
    <hr>
 
 	<li> VOLTAGE: <span id="field1" > --- </span> V </li>
-	<li> POWER: <span id="field2" > --- </span> W </li>
-	<li> FREQUENCY: <span id="field3" > --- </span> HZ </li>
-	<li> ENERGY: <span id="field4" > --- </span> KW/H </li>
-	<li> COST: &#8358; <span id="field8" > --- </span>  </li>
-	<li> CURRENT: <span id="field5" > --- </span> A </li>
-	<li> POWER FACTOR: <span id="field6" > --- </span> &percnt; </li>
-	<li> TEMPERATURE: <span id="field7" > --- </span> °C </li>
+	<li> TEMPERATURE SENSOR A: <span id="field2" > --- </span> W </li>
+	<li> HUMIDITY SENSOR A: <span id="field3" > --- </span> HZ </li>
+	<li> TEMPERATURE SENSOR B: <span id="field4" > --- </span> KW/H </li>
+	<li> HUMIDITY SENSOR B: &#8358; <span id="field8" > --- </span>  </li>
+	<li> WATER SENSOR A: <span id="field5" > --- </span> A </li>
+	<li> WATER SENSOR B: <span id="field6" > --- </span> &percnt; </li>
+	<li> SMOKE SENSOR A: <span id="field7" > --- </span> °C </li>
+	<li> SMOKE SENSOR B: <span id="field12" > --- </span> V </li>
+	<li> BATTERY VOLTAGE: <span id="field22" > --- </span> W </li>
 	<li> Last value: <span id="created_at" > --- </span> </li>
 	<li> Update # <span id="entry_id" > --- </span> </li>
 	<hr >
 </span>
 <span id="dataLive" >
 
-	<hr>
-	<h3  align="center"> Live data (right now)</h3>
-   <hr>
+<!-- 	<hr> -->
+<!-- 	<h3  align="center"> Live data (right now)</h3> -->
+<!--    <hr> -->
 
-	<li> VOLTAGE: <span id="field12" > --- </span> V </li>
-	<li> POWER: <span id="field22" > --- </span> W </li>
-	<li> FREQUENCY: <span id="field32" > --- </span> HZ </li>
-	<li> ENERGY: <span id="field42" > --- </span> KW/H </li>
-	<li> COST: &#8358; <span id="field82" > --- </span>  </li>
-	<li> CURRENT: <span id="field52" > --- </span> A </li>
-	<li> POWER FACTOR: <span id="field62" > --- </span> &percnt; </li>
-	<li> TEMPERATURE: <span id="field72" > --- </span> °C </li>
-	<li> Last value: <span id="created_at2" > --- </span> </li>
-	<li> Update # <span id="entry_id2" > --- </span> </li>
-	<hr >
-</span>
+<!-- 	<li> SMOKE SENSOR B: <span id="field12" > --- </span> V </li> -->
+<!-- 	<li> BATTERY VOLTAGE: <span id="field22" > --- </span> W </li> -->
+<!-- 	<li> FREQUENCY: <span id="field32" > --- </span> HZ </li> -->
+<!-- 	<li> ENERGY: <span id="field42" > --- </span> KW/H </li> -->
+<!-- 	<li> COST: &#8358; <span id="field82" > --- </span>  </li> -->
+<!-- 	<li> CURRENT: <span id="field52" > --- </span> A </li> -->
+<!-- 	<li> POWER FACTOR: <span id="field62" > --- </span> &percnt; </li> -->
+<!-- 	<li> TEMPERATURE: <span id="field72" > --- </span> °C </li> -->
+<!-- 	<li> Last value: <span id="created_at2" > --- </span> </li> -->
+<!-- 	<li> Update 2# <span id="entry_id2" > --- </span> </li> -->
+<!-- 	<hr > -->
+<!-- </span> -->
 
-<span id="data">
+<!-- <span id="data"> -->
 	<hr >
 	<h3 align="center"> Analysis </h3>
 	<hr >
