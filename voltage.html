@@ -219,11 +219,11 @@ var channelsLoaded = 0;
 // the 'T' Temperature left axis, or the 'O' Other right axis.
 var channelKeys =[];
 
-channelKeys.push({channelNumber:1888103, name:'POWER',key:'DBN06SRFURNEJ491',
-   fieldList:[{field:2,axis:'W'}]});
+channelKeys.push({channelNumber:2358825, name:'AC VOLTAGE',key:'N9058QVO7XR70WDJ',
+   fieldList:[{field:1,axis:'V'}]});
    
-channelKeys.push({channelNumber:1888103, name:'ENERGY',key:'DBN06SRFURNEJ491',
-   fieldList:[{field:8,axis:'₦'}]});
+channelKeys.push({channelNumber:2358844, name:'BATTERY VOLTAGE',key:'F6NM2AZKE41WSG3E',
+   fieldList:[{field:2,axis:'V'}]});
     
 // user's timezone offset
 var myOffset = new Date().getTimezoneOffset();
@@ -491,20 +491,20 @@ rangeSelector: {
 		
             title: {
 
-                text: 'POWER (W)'
+                text: 'AC VOLTAGE (V)'
 				
             },
-            id: 'W',
+            id: 'V',
             showEmpty: false,
 
     }, {
 	
             title: {
-                text: 'COST (₦)'
+                text: 'BATTERY VOLTAGE (V)'
 
             },
             
-            id: '₦',
+            id: 'V',
             showEmpty: false,
     }, {
     }],
