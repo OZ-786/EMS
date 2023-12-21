@@ -219,11 +219,11 @@ var channelsLoaded = 0;
 // the 'T' Temperature left axis, or the 'O' Other right axis.
 var channelKeys =[];
 
-channelKeys.push({channelNumber:1888103, name:'POWER',key:'DBN06SRFURNEJ491',
-   fieldList:[{field:2,axis:'W'}]});
+channelKeys.push({channelNumber:2358825, name:'TEMPERATURE',key:'N9058QVO7XR70WDJ',
+   fieldList:[{field:2,axis:'°C'}]});
    
-channelKeys.push({channelNumber:1888103, name:'ENERGY',key:'DBN06SRFURNEJ491',
-   fieldList:[{field:8,axis:'₦'}]});
+channelKeys.push({channelNumber:2358825, name:'TEMPERATURE',key:'N9058QVO7XR70WDJ',
+   fieldList:[{field:4,axis:'°C'}]});
     
 // user's timezone offset
 var myOffset = new Date().getTimezoneOffset();
@@ -491,16 +491,16 @@ rangeSelector: {
 		
             title: {
 
-                text: 'POWER (W)'
+                text: 'TEMPERATURE SENSOR A (°C)'
 				
             },
-            id: 'W',
+            id: 'W°C',
             showEmpty: false,
 
     }, {
 	
             title: {
-                text: 'COST (₦)'
+                text: 'TEMPERATURE SENSOR B (°C)'
 
             },
             
