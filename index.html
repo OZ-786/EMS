@@ -19,8 +19,10 @@
 	var alertDone = false;
 $(document).ready(function() {
 	getUpdates();
+	getUpdatess();
 	// check for new updates
 	setInterval('getUpdates()',10000);
+	setInterval('getUpdatess()',10000);
 
 	setInterval('liveTimerUpdtFun()',10000);
 });
@@ -106,6 +108,93 @@ lastUpdtTime = (new Date()).getTime();
 		});
 }
 
+// second one 
+
+function getUpdatess() {
+	// get the data with a webservice call
+	$("#entry_id2").css('color', '#f44b4b');
+
+	$.getJSON('https://api.thingspeak.com/channels/1599196/feeds/last', function(data2) {
+
+			// if the field1 has data update the page
+
+			d = new Date(data2.created_at);
+
+	$("#created_at2").html(d.toDateString() + " " + d.toLocaleTimeString()).css("fontSize", 15);
+	$("#entry_id2").html(data2.entry_id).css("fontSize", 15);
+
+		if (data2.field1!=null){
+     $("#field12").html(data2.field1).css("fontSize", 15);
+	}
+	else{
+	$("#field12").html("OFFLINE").css("fontSize", 15);	
+	}
+
+	if (data2.field2!=null){
+     $("#field22").html(data2.field2).css("fontSize", 15);
+	}
+	else{
+	$("#field22").html("OFFLINE").css("fontSize", 15);	
+	}
+
+		if (data2.field3!=null){
+     $("#field32").html(data2.field3).css("fontSize", 15);
+	}
+	else{
+	$("#field32").html("OFFLINE").css("fontSize", 15);	
+	}
+
+		if (data2.field4!=null){
+     $("#field42").html(data2.field4).css("fontSize", 15);
+	}
+	else{
+	$("#field42").html("OFFLINE").css("fontSize", 15);	
+	}
+
+		if (data2.field5!=null){
+     $("#field52").html(data2.field5).css("fontSize", 15);
+	}
+	else{
+	$("#field52").html("OFFLINE").css("fontSize", 15);	
+	}
+
+		if (data2.field6!=null){
+     $("#field62").html(data2.field6).css("fontSize", 15);
+	}
+	else{
+	$("#field62").html("OFFLINE").css("fontSize", 15);	
+	}
+
+		if (data2.field7!=null){
+     $("#field72").html(data2.field7).css("fontSize", 15);
+	}
+	else{
+	$("#field72").html("OFFLINE").css("fontSize", 15);	
+	}
+		
+	if (data2.field8!=null){
+     $("#field82").html(data2.field8).css("fontSize", 15);
+	}
+	else{
+	$("#field82").html("OFFLINE").css("fontSize", 15);	
+	}
+
+
+	$("#entry_id2").css('color', 'white');
+
+//sedond one 
+
+
+
+
+lastUpdtTime = (new Date()).getTime();
+	}).fail(function() { 
+		$("#entry_id").html("Error while retrieving information!").css("fontSize", 15);
+		$("#entry_id").css('color', '#f44b4b');
+		});
+}
+
+
 function liveTimerUpdtFun() {
 	// drowser requst time past
 	if(lastUpdtTime!=null){
@@ -130,7 +219,6 @@ function liveTimerUpdtFun() {
 	}
 }
 </script>
-
 
   <style>
 
@@ -267,6 +355,24 @@ function liveTimerUpdtFun() {
 	<li> TEMPERATURE: <span id="field7" > --- </span> °C </li>
 	<li> Last value: <span id="created_at" > --- </span> </li>
 	<li> Update # <span id="entry_id" > --- </span> </li>
+	<hr >
+</span>
+<span id="dataLive" >
+
+	<hr>
+	<h3  align="center"> Live data (right now)</h3>
+   <hr>
+
+	<li> VOLTAGE: <span id="field12" > --- </span> V </li>
+	<li> POWER: <span id="field22" > --- </span> W </li>
+	<li> FREQUENCY: <span id="field32" > --- </span> HZ </li>
+	<li> ENERGY: <span id="field42" > --- </span> KW/H </li>
+	<li> COST: &#8358; <span id="field82" > --- </span>  </li>
+	<li> CURRENT: <span id="field52" > --- </span> A </li>
+	<li> POWER FACTOR: <span id="field62" > --- </span> &percnt; </li>
+	<li> TEMPERATURE: <span id="field72" > --- </span> °C </li>
+	<li> Last value: <span id="created_at2" > --- </span> </li>
+	<li> Update # <span id="entry_id2" > --- </span> </li>
 	<hr >
 </span>
 
