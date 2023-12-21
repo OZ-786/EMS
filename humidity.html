@@ -219,11 +219,11 @@ var channelsLoaded = 0;
 // the 'T' Temperature left axis, or the 'O' Other right axis.
 var channelKeys =[];
 
-channelKeys.push({channelNumber:1888103, name:'POWER',key:'DBN06SRFURNEJ491',
-   fieldList:[{field:2,axis:'W'}]});
+channelKeys.push({channelNumber:2358825, name:'HUMIDITY SENSOR A',key:'N9058QVO7XR70WDJ',
+   fieldList:[{field:3,axis:'%'}]});
    
-channelKeys.push({channelNumber:1888103, name:'ENERGY',key:'DBN06SRFURNEJ491',
-   fieldList:[{field:8,axis:'₦'}]});
+channelKeys.push({channelNumber:2358825, name:'HUMIDITY SENSOR B',key:'N9058QVO7XR70WDJ',
+   fieldList:[{field:5,axis:'%'}]});
     
 // user's timezone offset
 var myOffset = new Date().getTimezoneOffset();
@@ -491,7 +491,7 @@ rangeSelector: {
 		
             title: {
 
-                text: 'POWER (W)'
+                text: 'HUMIDITY SENSOR A (%)'
 				
             },
             id: 'W',
@@ -500,7 +500,7 @@ rangeSelector: {
     }, {
 	
             title: {
-                text: 'COST (₦)'
+                text: 'HUMIDITY SENSOR B (%)'
 
             },
             
